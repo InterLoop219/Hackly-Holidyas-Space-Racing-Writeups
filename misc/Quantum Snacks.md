@@ -24,8 +24,8 @@
   Considering only these 3 logic gates, and starting in the (1, 0) state, how many states can the qubit have? Hint: Start applying the logic gates in random order. Drawing the result in x-y coordinates will greatly help you understand the result. 
 
 ####   Solution:
-  Actually I don't know actulal soliton. I was to lazy to make math for all of this and I just brutefroced it by hand. 
-  I was distracted by communicating with the team during brutefrocing and when it was solved I didn't pay attention to what number I trying (hands done it automaticly).
+  Actually I didn't know the actual solution to this and I was too lazy to make the math for all of this and just bruteforced it by hand. 
+  I was distracted by communicating with the team during bruteforcing and when it was finally solved I did not pay attention to what number I trying (hands did it automatically).
   But it was between 80 and 100 :D
 
 ### Flag 2 [50 points]:
@@ -37,14 +37,14 @@
 , only using the H and X operations. A possible (wrong) answer is HHXHXHXH.
 
 ####   Solution:
-  I tried to understand what these gates do to qbits. That wah I got:
-    X is just flips qbit. Example: was (1, 0), then (0, 1)
-    Z is multiply lower bit to -1. Example: was (1, 1), then (1, -1)
-    H is most wiredest gate. It is multiply lower bit to -1 and every bit to 1/sqrt(2). Example: was (1, 1), then (1/sqrt(2), -1/sqrt(2)). If bit is 1/sqrt(2) it makes it 1.
+I tried to understand what these gates do to qubits. Then what I got is that:
+    X just flips qbit. Example: was (1, 0), then (0, 1)
+    Z just multiplies lower bit to -1. Example: was (1, 1), then (1, -1)
+    H is the weirdest gate. It multiplies lower bit to -1 and then both bits to 1/sqrt(2). Example: was (1, 1), then (1/sqrt(2), -1/sqrt(2)). If bit is itself 1/sqrt(2) it makes it 1.
   
-  So to get from (1, 0) to (-1, 0) we must flip qbit (X (0, 1)), then make lower bit negative (H (0, -1/sqrt(2))), then flip again (X (-1/sqrt(2), 0)) and get rid of this sqrt bullshit (H (-1, 0))
+  So to get from (1, 0) to (-1, 0) we must flip qbit (X (0, 1)), then make lower bit negative (H (0, -1/sqrt(2))), then flip again (X (-1/sqrt(2), 0)) and get rid of this square root term (H (-1, 0))
 
-  Right sequense: XHXH
+  Right sequence is: XHXH
   **FLAG: CTF{quantum_circuit_master} **
 
 
@@ -55,8 +55,8 @@
   Same as question 2 but now provide the shortest circuit possible (minimal number of gates). You are allowed to use H, X and Z.
 
 ####   Solution:
-  Since we have hate that makes lower bit negative we don't have to deal with 1/sqrt(2). 
+  Since we now have a gate that makes the lower bit negative we don't have to deal with 1/sqrt(2). So what we do is we flip qbit (X, (0, 1)), then we multiply the 1 with -1 using (Z, (0, -1)) and at last we flip the digits with (X, (-1, 0)).
 
-  Right sequense: XZX
+  Right sequence: XZX
   
   **FLAG: XZX**
