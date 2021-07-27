@@ -21,10 +21,10 @@
    Note: you do not need to use the verification tool for this subtask. You can enter the bitstring directly as the flag.
         
 ####     Solution:
-   I used python for this one.
-   First we need to make CNOT and NOCT functions. Then we need to make that protocol line an actual python code. 
-   I make it fstrings so I can easely concat and  print result.
-   Also I added 1 zero to begining of bit string because I am lazy to change all of indexes :D
+   I used Python for this one.
+   First we need to make CNOT and NOCT functions. Then we need to make that protocol line into actual python code. 
+   I make fstrings so that I can easily concatenate and print the result.
+   Also I added 1 zero to begining of the bit string because I am too lazy to change all of indices. :D
         ```
         def CNOT(a, b):
             if a == '1':
@@ -60,9 +60,9 @@
 
 
 ####     Solution:
-   All posible values for qbits are (0, 1, -1, 1/sqrt(2), -1/sqrt(2)).
-   We can say that A and D is defenetly 2. As 1/sqrt(2) is outside of brackets we can say that B,C,E and F is 0, 1 or -1. 
-   I am lazy to do math so I bruteforced solution tester. We can give him numbers with get request:
+   All posible values for our qbits are (0, 1, -1, 1/sqrt(2), -1/sqrt(2)).
+   We can say that A and D are definitely 2. As 1/sqrt(2) is outside of the brackets we can say that B, C, E, F are either 0, 1 or -1. 
+   I am too lazy to do math so I bruteforced the solution tester. We can give the site numbers with get request:
 
         ```
         import requests as r
@@ -118,6 +118,6 @@
                     break
 
 
-   Right sequense: [2, 0, 1, 1, 0]
+   Right sequence: [2, 0, 1, 1, 0]
    
    **FLAG: CTF{quantum_shooting_for_the_stars}**
